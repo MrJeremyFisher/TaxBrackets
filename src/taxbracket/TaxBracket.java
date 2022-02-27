@@ -1,120 +1,98 @@
 package taxbracket;
 
 import java.util.Scanner;
+import java.text.DecimalFormat;
 
 public class TaxBracket {
 
-	public static final double RATE1 = 0.0505; // Tax rates
-	public static final double RATE2 = 0.0915;
-	public static final double RATE3 = 0.116;
-	public static final double RATE4 = 0.1216;
-	public static final double RATE5 = 0.1316;
+	static public final double RATE1 = 0.0505; // Provincial tax rates
+	static public final double RATE2 = 0.0915;
+	static public final double RATE3 = 0.116;
+	static public final double RATE4 = 0.1216;
+	static public final double RATE5 = 0.1316;
 
-	public static final double T1 = 45142; // Tax brackets
-	public static final double T2 = 90287;
-	public static final double T3 = 150000;
-	public static final double T4 = 220000;
+	static public final double T1 = 45142; // Provincial tax brackets
+	static public final double T2 = 90287;
+	static public final double T3 = 150000;
+	static public final double T4 = 220000;
 
-	public static boolean BR1 = false; // True/False for determining brackets in receipt
-	public static boolean BR2 = false;
-	public static boolean BR3 = false;
-	public static boolean BR4 = false;
-	public static boolean BR5 = false;
+	static public final double fRATE1 = 0.15; // Federal tax rates
+	static public final double fRATE2 = 0.205;
+	static public final double fRATE3 = 0.26;
+	static public final double fRATE4 = 0.29;
+	static public final double fRATE5 = 0.33;
 
+	static public final double fT1 = 49020; // Federal tax brackets
+	static public final double fT2 = 98040;
+	static public final double fT3 = 151978;
+	static public final double fT4 = 216511;
+
+	static String Province = "Ontario";
+	static String Country = "Canada";
 	static double income = 0;
 	static double tax = 0;
-	static double totalTax = 0;
-
-	public static double netIncome() {
+	static double ftax = 0;
+	static DecimalFormat money = new DecimalFormat("###,###,###.##$");
+	
+	
+	public static void DataCollection(String[] args) {
 
 		Scanner IncomeIn = new Scanner(System.in); // Construct Scanner
 		System.out.print("Enter income = ");
 		income = IncomeIn.nextDouble(); // Read in next double into income
+		
+		
+		
+		if (income <= 0) {
+			System.out.println("Income cannot be less than or equal to 0, try again");
+			main(null);
 
-		double tax1 = 0;
-		double tax2 = 0;
-		double tax3 = 0;
-		double tax4 = 0;
-		double tax5 = 0;
+		} else {
 
-		double part1 = 0;
-		double part2 = 0;
-		double part3 = 0;
-		double part4 = 0;
-
-		// Low Income bracket
-		if (income >= T1) {
-			part1 = income - T1; // part = income - 45142
-
-			System.out.println("BLARGH: " + part1);
-
-			tax1 = part1 * RATE1; // tax = tax + part * 5%
-			System.out.println("LowTax, less than 45142 " + tax1);
-			totalTax = tax1;
-
+			TaxMath(null);
 		}
-
-		if (part1 <= 0) {
-
-			Output(null); // if drops to zero or less abort and finalize
-
-		}
-
-		// Med income bracket
-		if (part1 > T1 && part1 <= T2) {
-
-			part2 = T2 - part1;
-			tax2 = part2 * RATE2;
-
-			System.out.println("BLARGH: " + part2);
-
-			System.out.println("MedTax, more than 45142, less than 90287 " + tax2);
-			totalTax = tax1 + tax2;
-
-		}
-
-		if (part2 <= 0) {
-
-			Output(null); // if drops to zero or less abort and finalize
-
-		}
-
-		// MedHigh income bracket
-		if (part2 > T2 && part1 <= T3) {
-			part3 = T3 - part2;
-			tax3 = part3 * RATE3;
-			System.out.println("MedHighTax, more than 90287, less than 150000 " + tax3);
-			totalTax = tax1 + tax2 + tax3;
-
-		}
-
-		if (part3 <= 0) {
-
-			Output(null); // if drops to zero or less abort and finalize
-
-		}
-
-		// High income bracket
-		if (part1 > T3 && part1 <= T4) {
-			part4 = T4 - part3;
-			tax4 = part4 * RATE4;
-			System.out.println("MedTax, more than 150000, less than 220000 " + tax4);
-			totalTax = tax1 + tax2 + tax3 + tax4;
-
-		}
-
-		return totalTax;
 
 	}
 
-	public static void Output(String[] args) {
+	public static void TaxMath(String[] args) {
 
-		System.out.println(totalTax);
+		if (Province == "Ontario") { // PROVINCIAL TAX
+										// ---------------------------------------------------------------------------
+			if (income <= T1) // Bracket 1 between 1 and 45142
+				tax = RATE1 * income;
+			else if (income <= T2) // Bracket 2 between 45142 and 90287
+				tax = RATE1 * T1 + RATE2 * (income - T1);
+			else if (income <= T3) // Bracket 3 between 90287 and 150000
+				tax = RATE1 * T1 + RATE2 * (income - T1) + RATE3 * (income - T2);
+			else if (income <= T4) // Bracket 4 between 150000 and 200000
+				tax = RATE1 * T1 + RATE2 * (income - T1) + RATE3 * (income - T2) + RATE4 * (income - T3);
+			else // Bracket 5 above 200000
+				tax = RATE1 * T1 + RATE2 * (income - T1) + RATE3 * (income - T2) + RATE4 * (income - T3)
+						+ RATE5 * (income - T4);
+		}
+		System.out.println("Provincial tax: " + money.format(tax));
 
+		if (Country == "Canada") { // FEDERAL TAX
+						// ---------------------------------------------------------------------------------------------
+			if (income <= fT1) // Bracket 1 between 1 and 45142
+				ftax = fRATE1 * income;
+			else if (income <= fT2) // Bracket 2 between 45142 and 90287
+				ftax = fRATE1 * fT1 + fRATE2 * (income - fT1);
+			else if (income <= fT3) // Bracket 3 between 90287 and 150000
+				ftax = fRATE1 * fT1 + fRATE2 * (income - fT1) + fRATE3 * (income - fT2);
+			else if (income <= fT4) // Bracket 4 between 150000 and 200000
+				ftax = fRATE1 * fT1 + fRATE2 * (income - fT1) + fRATE3 * (income - fT2) + fRATE4 * (income - fT3);
+			else // Bracket 5 above 200000
+				ftax = fRATE1 * fT1 + fRATE2 * (income - fT1) + fRATE3 * (income - fT2) + fRATE4 * (income - fT3)
+						+ RATE5 * (income - fT4);
+		}
+		System.out.println("Federal tax: " + money.format(ftax));
 	}
 
 	public static void main(String[] args) {
-		netIncome();
+
+		DataCollection(args); // Call scanner input TODO Replace me with a GUI input
+
 	}
 
 }
