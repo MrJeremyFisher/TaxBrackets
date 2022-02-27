@@ -37,11 +37,6 @@ public class TaxBracket {
 	
 	public static void DataCollection(String[] args) {
 
-		Scanner IncomeIn = new Scanner(System.in); // Construct Scanner
-		System.out.print("Enter income = ");
-		income = IncomeIn.nextDouble(); // Read in next double into income
-		
-		
 		
 		if (income <= 0) {
 			System.out.println("Income cannot be less than or equal to 0, try again");
