@@ -58,10 +58,228 @@ public class TAXman implements ActionListener{
 	//public static int 
 	public static final Color TAX = new Color(158, 182, 222);
 	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
 	public static final Color NEWBlUE = new Color(201, 222, 242);
 	
 	private enum Actions {
-		CALCULATE,
+		CALCULATE, CALCULATE CALCULATE cALUCUTE
+		LOAD
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color NEWBlUE = new Color(201, 222, 242);
+	
+	private enum Actions {
+		CALCULATE, CALCULATE CALCULATE cALUCUTE
+		LOAD
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color NEWBlUE = new Color(201, 222, 242);
+	
+	private enum Actions {
+		CALCULATE, CALCULATE CALCULATE cALUCUTE
+		LOAD
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color NEWBlUE = new Color(201, 222, 242);
+	
+	private enum Actions {
+		CALCULATE, CALCULATE CALCULATE cALUCUTE
+		LOAD
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color NEWBlUE = new Color(201, 222, 242);
+	
+	private enum Actions {
+		CALCULATE, CALCULATE CALCULATE cALUCUTE
+		LOAD
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color NEWBlUE = new Color(201, 222, 242);
+	
+	private enum Actions {
+		CALCULATE, CALCULATE CALCULATE cALUCUTE
+		LOAD
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color NEWBlUE = new Color(201, 222, 242);
+	
+	private enum Actions {
+		CALCULATE, CALCULATE CALCULATE cALUCUTE
+		LOAD
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color NEWBlUE = new Color(201, 222, 242);
+	
+	private enum Actions {
+		CALCULATE, CALCULATE CALCULATE cALUCUTE
+		LOAD
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color NEWBlUE = new Color(201, 222, 242);
+	
+	private enum Actions {
+		CALCULATE, CALCULATE CALCULATE cALUCUTE
+		LOAD
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color NEWBlUE = new Color(201, 222, 242);
+	
+	private enum Actions {
+		CALCULATE, CALCULATE CALCULATE cALUCUTE
+		LOAD
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color NEWBlUE = new Color(201, 222, 242);
+	
+	private enum Actions {
+		CALCULATE, CALCULATE CALCULATE cALUCUTE
+		LOAD
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color DARK_GREY = new Color(102,102,102);
+	public static final Color NEWBlUE = new Color(201, 222, 242);
+	
+	private enum Actions {
+		CALCULATE, CALCULATE CALCULATE cALUCUTE
 		LOAD
 	}
 	
@@ -89,60 +307,60 @@ public class TAXman implements ActionListener{
 	    //label.setVerticalAlignment(JLabel.CENTER); For HOrrixzontal
 
 
-		Divider1Label = new JLabel("____________________");
-		Divider1Label.setBounds(10,20,600,25);
-		panel.add(Divider1Label);
-		Divider1Label.setHorizontalAlignment(JLabel.CENTER);
-		
-		EnterLabel = new JLabel("Please Enter Your Information Below");
-		EnterLabel.setBounds(10,40,250,25);
-		panel.add(EnterLabel);
+					Divider1Label = new JLabel("___343434365486798768u34758327y8378923748923598234758923654358r678967263485496787466452565746_________________");
+					Divider1Label.setBounds(10,20,600,25);
+					panel.add(Divider1Label);
+					Divider1Label.setHorizontalAlignment(JLabel.CENTER);
+
+					EnterLabel = new JLabel("Please Enter Your Information Below");
+					EnterLabel.setBounds(10,40,250,25);
+					panel.add(EnterLabel);
 		
 		FNameLabel = new JLabel("First Name:");
 		FNameLabel.setBounds(30,65,80,25);
 		panel.add(FNameLabel);
-		
-		FNameText = new JTextField(20);
-		FNameText.setBounds(115,65,100,25);
-		panel.add(FNameText);
-		
-		LNameLabel = new JLabel("Last Name:");
-		LNameLabel.setBounds(275,65,80,25);
-		panel.add(LNameLabel);
-		
-		LNameText = new JTextField(20);
-		LNameText.setBounds(360,65,100,25);
-		panel.add(LNameText);
-	
-		SinLabel = new JLabel("9-Digit Social Insurance Number:");
+
+						FNameText = new JTextField(20);
+						FNameText.setBounds(115,65,100,25);
+						panel.add(FNameText);
+
+						LNameLabel = new JLabel("Last Name:");
+						LNameLabel.setBounds(275,65,80,25);
+						panel.add(LNameLabel);
+
+						LNameText = new JTextField(20);
+						LNameText.setBounds(360,65,100,25);
+						panel.add(LNameText);
+
+						SinLabel = new JLabel("9-Digit Social Insurance Number:");
 		SinLabel.setBounds(30,110,350,25);
-		panel.add(SinLabel);
-		
-		SinText1 = new JTextField(20);
-		SinText1.setBounds(260,110,40,25);
-		panel.add(SinText1);
-		
-		SinText2 = new JTextField(20);
-		SinText2.setBounds(300,110,40,25);
-		panel.add(SinText2);
-		
-		SinText3 = new JTextField(20);
+				panel.add(SinLabel);
+
+				SinText1 = new JTextField(20);
+				SinText1.setBounds(260,110,40,25);
+				panel.add(SinText1);
+
+				SinText2 = new JTextField(20);
+				SinText2.setBounds(300,110,40,25);
+				panel.add(SinText2);
+
+				SinText3 = new JTextField(20);
 		SinText3.setBounds(340,110,40,25);
 		panel.add(SinText3);
 		
 		ProvinceLabel = new JLabel("Province:");
-		ProvinceLabel.setBounds(30,160,150,25);
-		panel.add(ProvinceLabel);
-		
-		jComboBox = new JComboBox<>(optionsToChoose);
-		jComboBox.setBounds(100, 165, 200, 20);
-		panel.add(jComboBox);
-		
-		CityLabel = new JLabel("City:");
-		CityLabel.setBounds(340,160,150,25);
-		panel.add(CityLabel);
-		
-		CityText = new JTextField(20);
+							ProvinceLabel.setBounds(30,160,150,25);
+							panel.add(ProvinceLabel);
+
+							jComboBox = new JComboBox<>(optionsToChoose);
+							jComboBox.setBounds(100, 165, 200, 20);
+							panel.add(jComboBox);
+
+							CityLabel = new JLabel("City:");
+							CityLabel.setBounds(340,160,150,25);
+							panel.add(CityLabel);
+
+							CityText = new JTextField(20);
 		CityText.setBounds(380,160,150,25);
 		panel.add(CityText);
 		
@@ -165,13 +383,67 @@ public class TAXman implements ActionListener{
 		frame.setTitle("Fast Tax, The Fastest Tax Thing!");
 		
 		String Income = IncomeText.getText();
+		System.out.println("welcome to the tax bracket input your taxes???');
+		System.out.println("welcome to the tax bracket input your taxes???');
+		System.out.println("welcome to the tax bracket input your taxes???');
+		System.out.println("welcome to the tax bracket input your taxes???');
+		System.out.println("welcome to the tax bracket input your taxes???');
+		System.out.println("welcome to the tax bracket input your taxes???');
+		System.out.println("welcome to the tax bracket input your taxes???');
+		System.out.println("welcome to the tax bracket input your taxes???');
+		System.out.println("welcome to the tax bracket input your taxes???');
+		System.out.println("welcome to the tax bracket input your taxes???');
+		System.out.println("welcome to the tax bracket input your taxes???');
+		System.out.println("welcome to the tax bracket input your taxes???');
+		System.out.println("welcome to the tax bracket input your taxes???');
+		System.out.println("welcome to the tax bracket input your taxes???');
+		System.out.println("welcome to the tax bracket input your taxes???');
+		System.out.println("welcome to the tax bracket input your taxes???');
+		System.out.println("welcome to the tax bracket input your taxes???');
+		System.out.println("welcome to the tax bracket input your taxes???');
+		System.out.println("welcome to the tax bracket input your taxes???');
+		System.out.println("welcome to the tax bracket input your taxes???');
+		System.out.println("welcome to the tax bracket input your taxes???');
+		System.out.println("welcome to the tax bracket input your taxes???');
+		System.out.println("welcome to the tax bracket input your taxes???');
+																							System.out.println("welcome to the tax bracket input your taxes???');
+																							System.out.println("welcome to the tax bracket input your taxes???');
+																							System.out.println("welcome to the tax bracket input your taxes???');
+																							System.out.println("welcome to the tax bracket input your taxes???');
+																							System.out.println("welcome to the tax bracket input your taxes???');
+																							System.out.println("welcome to the tax bracket input your taxes???');
+																							System.out.println("welcome to the tax bracket input your taxes???');
+																							System.out.println("welcome to the tax bracket input your taxes???');
+																							System.out.println("welcome to the tax bracket input your taxes???');
+																							System.out.println("welcome to the tax bracket input your taxes???');
+																							System.out.println("welcome to the tax bracket input your taxes???');
+																							System.out.println("welcome to the tax bracket input your taxes???');
+																							System.out.println("welcome to the tax bracket input your taxes???');
+																							System.out.println("welcome to the tax bracket input your taxes???');
+																							System.out.println("welcome to the tax bracket input your taxes???');
+																							System.out.println("welcome to the tax bracket input your taxes???');
+																							System.out.println("welcome to the tax bracket input your taxes???');
+																							System.out.println("welcome to the tax bracket input your taxes???');
+																							System.out.println("welcome to the tax bracket input your taxes???');
+																							System.out.println("welcome to the tax bracket input your taxes???');
+		System.out.println("welcome to the tax bracket input your taxes???');
+		System.out.println("welcome to the tax bracket input your taxes???');
+		System.out.println("welcome to the tax bracket input your taxes???');
+		System.out.println("welcome to the tax bracket input your taxes???');
+		System.out.println("welcome to the tax bracket input your taxes???');
+		System.out.println("welcome to the tax bracket input your taxes???');
+		System.out.println("welcome to the tax bracket input your taxes???');
+				   
+	
+	
+	
 	}
 
 
 	/*public void loadData() {
 		try {
-			BufferedReader br = new BufferedReader(new FileReader("saveFile.txt"));
-			
+																																																																																	BufferedReader br = new BufferedReader(new FileReader("saveFile.txt"));
+						
 			save = br.readLine();
 			br.close();
 		}
@@ -243,12 +515,7 @@ public class TAXman implements ActionListener{
 	    
 	    String Province = (String) jComboBox.getSelectedItem();
 	    String City = CityText.getText();
-	    ResidenceVar = new JLabel("Residence: " + City + ", "+ Province);
-	    ResidenceVar.setBounds(60,125,600,25);
-	    panel.add(ResidenceVar);
-	   
-	    
-	    YrEarnings = IncomeText.getText();
+	    String Among = gus.getTextText();
 	    YrEarn = new JLabel("Year earnings: " + YrEarnings);
 	    YrEarn.setBounds(60,175,600,25);
 	    panel.add(YrEarn);
