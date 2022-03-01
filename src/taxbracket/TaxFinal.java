@@ -37,10 +37,10 @@ public class TaxFinal implements ActionListener {
 	private static JTextField SinText3;
 	private static JLabel CityLabel;
 	private static JLabel ProvinceLabel;
-	private static JTextField CityText;
 	private static JLabel IncomeLabel;
 	private static JTextField IncomeText;
 	private static JButton Calculate;
+	private static JButton Brackets;
 	private static JLabel RevenueCanadaLabel;
 	private static JLabel IncomeTax2021;
 	private static JLabel InfoEarn;
@@ -60,6 +60,7 @@ public class TaxFinal implements ActionListener {
 	public static String City = "";
 	public static String YrEarnings = "";
 	public static JComboBox<String> jComboBox;
+	public static TaxFinal instance;
 
 	// JEremy's Globals
 	public static JProgressBar bar = new JProgressBar();
@@ -81,7 +82,6 @@ public class TaxFinal implements ActionListener {
 	public static final double fRATE5 = 0.33;
 	
 	public static int counter = 0;
-
 	public static boolean BR1 = false;
 	public static boolean BR2 = false;
 	public static boolean BR3 = false;
@@ -112,8 +112,9 @@ public class TaxFinal implements ActionListener {
 	public static final Color NEWBlUE = new Color(201, 222, 242);
 	static DecimalFormat money = new DecimalFormat("$###,###,###.##");
 
-	private enum Actions {
-		CALCULATE, LOAD
+	public enum Actions {
+		CALCULATE,
+		BRACKETS
 	}
 	
 	public static void fill(){
@@ -386,6 +387,7 @@ public class TaxFinal implements ActionListener {
 	}
 
 	public void calculate() {
+		TaxFinal instance = new TaxFinal();
 		panel = new JPanel();
 		panel.setBackground(NEWBlUE);
 		panel.setLayout(null);
@@ -472,6 +474,50 @@ public class TaxFinal implements ActionListener {
 		panel.add(EarnaftTax);
 		// End of neccessary calculations.
 		
+		Brackets = new JButton("View Tax Brackets");
+		Brackets.setBounds(280, 160, 250, 100);
+		Brackets.setActionCommand(Actions.BRACKETS.name());
+		Brackets.addActionListener(instance);
+		panel.add(Brackets);
+		
+		Calculate = new JButton("Calculate");
+		Calculate.setBounds(10, 300, 585, 25);
+		Calculate.setActionCommand(Actions.CALCULATE.name());
+		Calculate.addActionListener(instance);
+		panel.add(Calculate);
+		
+		frame.setVisible(true);
+		frame.setTitle("Fast Tax, The Fastest Tax Thing!");
+	}
+	public void Brackets() {
+		
+		panel = new JPanel();
+		panel.setBackground(NEWBlUE);
+		panel.setLayout(null);
+
+		frame = new JFrame();
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.add(panel);
+		frame.setSize(600, 400);
+		frame.setLocationRelativeTo(null);
+		frame.setBackground(DARK_GREY);
+		
+		
+		BufferedImage img = null;
+		try {
+		    img = ImageIO.read(new File("FastTax.png"));
+		} catch (IOException e) {
+		    e.printStackTrace();
+		}
+		
+		Image eimg = img.getScaledInstance(100,40,100);
+		
+		ImageIcon image2 = new ImageIcon(eimg);
+		
+		label2 = new JLabel(image2);
+		label2.setBounds(490,10,100,40);
+		panel.add(label2);
+		
 		frame.setVisible(true);
 		frame.setTitle("Fast Tax, The Fastest Tax Thing!");
 	}
@@ -486,10 +532,11 @@ public class TaxFinal implements ActionListener {
 			
 			
 
-		} else if (e.getActionCommand() == Actions.LOAD.name()) {
-			// loadData();
-			// System.out.println("Progress loaded");
+		} else if (e.getActionCommand() == Actions.BRACKETS.name()) {
+			frame.setVisible(false);
+			Brackets();
 		}
 
 	}
+	
 }
