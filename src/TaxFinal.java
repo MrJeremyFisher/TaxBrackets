@@ -1,0 +1,324 @@
+package taxfinal;
+
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.text.DecimalFormat;
+
+import javax.swing.*;
+
+public class TaxFinal implements ActionListener {
+
+	private static JPanel panel;
+	private static JFrame frame;
+	private static JLabel WelcomeLabel;
+	private static JLabel Divider1Label;
+	private static JLabel EnterLabel;
+	private static JLabel FNameLabel;
+	private static JTextField FNameText;
+	private static JLabel LNameLabel;
+	private static JTextField LNameText;
+	private static JLabel SinLabel;
+	private static JTextField SinText1;
+	private static JTextField SinText2;
+	private static JTextField SinText3;
+
+	private static JLabel ProvinceLabel;
+	private static JLabel CityLabel;
+	private static JTextField CityText;
+	private static JLabel IncomeLabel;
+	private static JTextField IncomeText;
+	private static JButton Calculate;
+	private static JLabel RevenueCanadaLabel;
+	private static JLabel IncomeTax2021;
+	private static JLabel InfoEarn;
+	private static JLabel NameVar;
+	private static JLabel SinVar;
+	private static JLabel ResidenceVar;
+	private static JLabel YrEarn;
+	private static JLabel FedTax;
+	private static JLabel ProvTax;
+	private static JLabel TotTax;
+	private static JLabel EarnaftTax;
+	public static String FName = "";
+	public static String LName = "";
+	public static double SIN1 = 0;
+	public static double SIN2 = 0;
+	public static double SIN3 = 0;
+	public static String Province = "";
+	public static String City = "";
+	public static String YrEarnings = "";
+	public static JComboBox<String> jComboBox;
+
+	// Jer vars DONT TOUCH
+	static public final double RATE1 = 0.0505; // Provincial tax rates
+	static public final double RATE2 = 0.0915;
+	static public final double RATE3 = 0.116;
+	static public final double RATE4 = 0.1216;
+	static public final double RATE5 = 0.1316;
+
+	static public final double T1 = 45142; // Provincial tax brackets
+	static public final double T2 = 90287;
+	static public final double T3 = 150000;
+	static public final double T4 = 220000;
+
+	static public final double fRATE1 = 0.15; // Federal tax rates
+	static public final double fRATE2 = 0.205;
+	static public final double fRATE3 = 0.26;
+	static public final double fRATE4 = 0.29;
+	static public final double fRATE5 = 0.33;
+
+	static public final double fT1 = 49020; // Federal tax brackets
+	static public final double fT2 = 98040;
+	static public final double fT3 = 151978;
+	static public final double fT4 = 216511;
+
+	static String Country = "Canada";
+	static double Income = 0;
+	static double IncomeOut = 0;
+	static double tax = 0;
+	static double ftax = 0;
+	static DecimalFormat money = new DecimalFormat("###,###,###.##$");
+	// End of Jer vars
+
+	public static final Color TAX = new Color(158, 182, 222);
+	public static final Color DARK_GREY = new Color(102, 102, 102);
+	public static final Color NEWBlUE = new Color(201, 222, 242);
+
+	private enum Actions {
+		CALCULATE, LOAD
+	}
+
+	public static void main(String[] args) {
+		TaxFinal instance = new TaxFinal();
+		String[] optionsToChoose = { "Ontario" };
+
+		panel = new JPanel();
+		panel.setBackground(TAX);
+		panel.setLayout(null);
+
+		frame = new JFrame();
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.add(panel);
+		frame.setSize(600, 400);
+		frame.setLocationRelativeTo(null);
+		frame.setBackground(DARK_GREY);
+
+		WelcomeLabel = new JLabel("Welcome to Fast Tax!");
+		WelcomeLabel.setBounds(10, 10, 600, 25);
+		panel.add(WelcomeLabel);
+		WelcomeLabel.setHorizontalAlignment(JLabel.CENTER);
+		// label.setVerticalAlignment(JLabel.CENTER); For HOrrixzontal
+
+		Divider1Label = new JLabel("____________________");
+		Divider1Label.setBounds(10, 20, 600, 25);
+		panel.add(Divider1Label);
+		Divider1Label.setHorizontalAlignment(JLabel.CENTER);
+
+		EnterLabel = new JLabel("Please Enter Your Information Below");
+		EnterLabel.setBounds(10, 40, 250, 25);
+		panel.add(EnterLabel);
+
+		FNameLabel = new JLabel("First Name:");
+		FNameLabel.setBounds(30, 65, 80, 25);
+		panel.add(FNameLabel);
+
+		FNameText = new JTextField(20);
+		FNameText.setBounds(115, 65, 100, 25);
+		panel.add(FNameText);
+
+		LNameLabel = new JLabel("Last Name:");
+		LNameLabel.setBounds(275, 65, 80, 25);
+		panel.add(LNameLabel);
+
+		LNameText = new JTextField(20);
+		LNameText.setBounds(360, 65, 100, 25);
+		panel.add(LNameText);
+
+		SinLabel = new JLabel("9-Digit Social Insurance Number:");
+		SinLabel.setBounds(30, 110, 350, 25);
+		panel.add(SinLabel);
+
+		SinText1 = new JTextField(20);
+		SinText1.setBounds(260, 110, 40, 25);
+		panel.add(SinText1);
+
+		SinText2 = new JTextField(20);
+		SinText2.setBounds(300, 110, 40, 25);
+		panel.add(SinText2);
+
+		SinText3 = new JTextField(20);
+		SinText3.setBounds(340, 110, 40, 25);
+		panel.add(SinText3);
+
+		ProvinceLabel = new JLabel("Province:");
+		ProvinceLabel.setBounds(30, 160, 150, 25);
+		panel.add(ProvinceLabel);
+
+		jComboBox = new JComboBox<>(optionsToChoose);
+		jComboBox.setBounds(100, 165, 200, 20);
+		panel.add(jComboBox);
+
+		CityLabel = new JLabel("City:");
+		CityLabel.setBounds(340, 160, 150, 25);
+		panel.add(CityLabel);
+
+		CityText = new JTextField(20);
+		CityText.setBounds(380, 160, 150, 25);
+		panel.add(CityText);
+
+		IncomeLabel = new JLabel("Enter your Income:");
+		IncomeLabel.setBounds(30, 210, 120, 25);
+		panel.add(IncomeLabel);
+
+		IncomeText = new JTextField(20);
+		IncomeText.setBounds(160, 210, 100, 25);
+		panel.add(IncomeText);
+
+		Calculate = new JButton("Calculate");
+		Calculate.setBounds(10, 300, 585, 25);
+		Calculate.setActionCommand(Actions.CALCULATE.name());
+		Calculate.addActionListener(instance);
+		panel.add(Calculate);
+
+		frame.setVisible(true);
+		frame.setTitle("Fast Tax, The Fastest Tax Thing!");
+
+		String Income = IncomeText.getText();
+
+		System.out.println(Income);
+
+	}
+
+	public void calculate() {
+
+		panel = new JPanel();
+		panel.setBackground(NEWBlUE);
+		panel.setLayout(null);
+
+		frame = new JFrame();
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.add(panel);
+		frame.setSize(600, 400);
+		frame.setLocationRelativeTo(null);
+		frame.setBackground(DARK_GREY);
+
+		RevenueCanadaLabel = new JLabel("Revenue Canada");
+		RevenueCanadaLabel.setBounds(10, 10, 600, 25);
+		panel.add(RevenueCanadaLabel);
+		RevenueCanadaLabel.setHorizontalAlignment(JLabel.CENTER);
+
+		IncomeTax2021 = new JLabel("Income Tax for 2021-22");
+		IncomeTax2021.setBounds(10, 30, 600, 25);
+		panel.add(IncomeTax2021);
+		IncomeTax2021.setHorizontalAlignment(JLabel.CENTER);
+
+		InfoEarn = new JLabel("Information of earnings for:");
+		InfoEarn.setBounds(10, 50, 600, 25);
+		panel.add(InfoEarn);
+
+		String FName = FNameText.getText();
+		String LName = LNameText.getText();
+		NameVar = new JLabel("Name: " + FName + " " + LName);
+		NameVar.setBounds(60, 85, 600, 25);
+		panel.add(NameVar);
+
+		String SIN1 = SinText1.getText();
+		String SIN2 = SinText2.getText();
+		String SIN3 = SinText3.getText();
+
+		SinVar = new JLabel("SIN#: " + SIN1 + "-" + SIN2 + "-" + SIN3);
+		SinVar.setBounds(60, 105, 600, 25);
+		panel.add(SinVar);
+
+		String Province = (String) jComboBox.getSelectedItem();
+		String City = CityText.getText();
+		ResidenceVar = new JLabel("Residence: " + City + ", " + Province);
+		ResidenceVar.setBounds(60, 125, 600, 25);
+		panel.add(ResidenceVar);
+
+		YrEarnings = IncomeText.getText();
+		YrEarn = new JLabel("Year earnings: " + YrEarnings);
+		YrEarn.setBounds(60, 175, 600, 25);
+		panel.add(YrEarn);
+
+		double IncomeOut = Integer.parseInt(YrEarnings); // Ignore warning, it just isn't used until later
+
+		System.out.println(IncomeOut);
+		if (Province == "Ontario") { // PROVINCIAL TAX
+
+			if (IncomeOut <= T1) // Bracket 1 between 1 and 45142
+				tax = RATE1 * IncomeOut;
+			else if (IncomeOut <= T2) // Bracket 2 between 45142 and 90287
+				tax = RATE1 * T1 + RATE2 * (IncomeOut - T1);
+			else if (IncomeOut <= T3) // Bracket 3 between 90287 and 150000
+				tax = RATE1 * T1 + RATE2 * (IncomeOut - T1) + RATE3 * (IncomeOut - T2);
+			else if (IncomeOut <= T4) // Bracket 4 between 150000 and 200000
+				tax = RATE1 * T1 + RATE2 * (IncomeOut - T1) + RATE3 * (IncomeOut - T2) + RATE4 * (IncomeOut - T3);
+			else // Bracket 5 above 200000
+				tax = RATE1 * T1 + RATE2 * (IncomeOut - T1) + RATE3 * (IncomeOut - T2) + RATE4 * (IncomeOut - T3)
+						+ RATE5 * (IncomeOut - T4);
+		}
+		
+		System.out.println("Provincial tax: " + money.format(tax));
+
+		if (Country == "Canada") { // FEDERAL TAX
+
+			if (IncomeOut <= fT1) // Bracket 1 between 1 and 45142
+				ftax = fRATE1 * IncomeOut;
+			else if (IncomeOut <= fT2) // Bracket 2 between 45142 and 90287
+				ftax = fRATE1 * fT1 + fRATE2 * (IncomeOut - fT1);
+			else if (IncomeOut <= fT3) // Bracket 3 between 90287 and 150000
+				ftax = fRATE1 * fT1 + fRATE2 * (IncomeOut - fT1) + fRATE3 * (IncomeOut - fT2);
+			else if (IncomeOut <= fT4) // Bracket 4 between 150000 and 200000
+				ftax = fRATE1 * fT1 + fRATE2 * (IncomeOut - fT1) + fRATE3 * (IncomeOut - fT2)
+						+ fRATE4 * (IncomeOut - fT3);
+			else // Bracket 5 above 200000
+				ftax = fRATE1 * fT1 + fRATE2 * (IncomeOut - fT1) + fRATE3 * (IncomeOut - fT2)
+						+ fRATE4 * (IncomeOut - fT3) + RATE5 * (IncomeOut - fT4);
+		}
+		
+		System.out.println("Federal tax: " + money.format(ftax));
+
+		// Here on calculations are necessary.
+		FedTax = new JLabel("Federal Tax: " + money.format(ftax));
+		FedTax.setBounds(60, 205, 600, 25);
+		panel.add(FedTax);
+
+		ProvTax = new JLabel("Provincial Tax: " + money.format(tax));
+		ProvTax.setBounds(60, 225, 600, 25);
+		panel.add(ProvTax);
+
+		double FinalTax = tax + ftax; // This is probably unnecessary, but I just realized that and who cares tbh
+		TotTax = new JLabel("Total Tax: " + money.format(FinalTax));
+		TotTax.setBounds(60, 265, 600, 25);
+		// WOOOOO YEAH BABYYYYY, COMPLETELY UNDOCUMENTED NONSENSE!!
+
+		panel.add(TotTax);
+
+		double IncomeAfterTax = IncomeOut - FinalTax;
+
+		EarnaftTax = new JLabel("Earnings after Tax: " + money.format(IncomeAfterTax));
+		EarnaftTax.setBounds(60, 305, 600, 25);
+		panel.add(EarnaftTax);
+		// End of necessary calculations.
+
+		frame.setVisible(true);
+		frame.setTitle("Fast Tax, The Fastest Tax Thing!");
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		if (e.getActionCommand() == Actions.CALCULATE.name()) {
+			frame.setVisible(false);
+			calculate();
+			System.out.println("Tax Calculated");
+
+		} else if (e.getActionCommand() == Actions.LOAD.name()) {
+			// loadData();
+			// System.out.println("Progress loaded");
+		}
+
+	}
+}
