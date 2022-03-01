@@ -1,20 +1,30 @@
-package taxfinal;
+package com.LucasWall.TAXman;
 
 import java.awt.Color;
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.text.DecimalFormat;
+
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JProgressBar;
 import javax.swing.JTextField;
 
 public class TaxFinal implements ActionListener {
 	private static JPanel panel;
 	private static JFrame frame;
 	private static JLabel WelcomeLabel;
+	private static JLabel label1;
+	private static JLabel label2;
 	private static JLabel Divider1Label;
 	private static JLabel EnterLabel;
 	private static JLabel FNameLabel;
@@ -52,7 +62,7 @@ public class TaxFinal implements ActionListener {
 	public static JComboBox<String> jComboBox;
 
 	// JEremy's Globals
-
+	public static JProgressBar bar = new JProgressBar();
 	public static final double RATE1 = 0.0505; // Provincial tax rates
 	public static final double RATE2 = 0.0915;
 	public static final double RATE3 = 0.116;
@@ -69,6 +79,8 @@ public class TaxFinal implements ActionListener {
 	public static final double fRATE3 = 0.26;
 	public static final double fRATE4 = 0.29;
 	public static final double fRATE5 = 0.33;
+	
+	public static int counter = 0;
 
 	public static boolean BR1 = false;
 	public static boolean BR2 = false;
@@ -103,7 +115,62 @@ public class TaxFinal implements ActionListener {
 	private enum Actions {
 		CALCULATE, LOAD
 	}
-
+	
+	public static void fill(){
+		int counter = 0;
+		
+		while(counter<=100) {
+			bar.setValue(counter);
+			try {
+				Thread.sleep(25);
+				label1.setVisible(true);
+				label2.setVisible(false);
+				WelcomeLabel.setVisible(false);
+				Divider1Label.setVisible(false);
+				EnterLabel.setVisible(false);
+				FNameLabel.setVisible(false);
+				FNameText.setVisible(false);
+				LNameLabel.setVisible(false);
+				LNameText.setVisible(false);
+				SinLabel.setVisible(false);
+				SinText1.setVisible(false);
+				SinText2.setVisible(false);
+				SinText3.setVisible(false);
+				CityLabel.setVisible(false);
+				jComboBox.setVisible(false);
+				ProvinceLabel.setVisible(false);
+				IncomeLabel.setVisible(false);
+				IncomeText.setVisible(false);
+				Calculate.setVisible(false);
+				
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			counter +=1;
+		}
+		label1.setVisible(false);
+		label2.setVisible(true);
+		bar.setVisible(false);
+		WelcomeLabel.setVisible(true);
+		Divider1Label.setVisible(true);
+		EnterLabel.setVisible(true);
+		FNameLabel.setVisible(true);
+		FNameText.setVisible(true);
+		LNameLabel.setVisible(true);
+		LNameText.setVisible(true);
+		SinLabel.setVisible(true);
+		SinText1.setVisible(true);
+		SinText2.setVisible(true);
+		SinText3.setVisible(true);
+		CityLabel.setVisible(true);
+		jComboBox.setVisible(true);
+		ProvinceLabel.setVisible(true);
+		IncomeLabel.setVisible(true);
+		IncomeText.setVisible(true);
+		Calculate.setVisible(true);
+		
+	}
+	
 	public static void main(String[] args) {
 		TaxFinal instance = new TaxFinal();
 		String[] optionsToChoose = { "Barrie", "Belleville", "Cambridge", "Guelph", "Hamilton", "Kingston", "Kitchener",
@@ -111,22 +178,50 @@ public class TaxFinal implements ActionListener {
 				"Thunder Bay", "Timmins", "Toronto", "Vaughan", "Waterloo", "Welland", "Windsor" };
 
 		panel = new JPanel();
+		
+		bar.setValue(0);
+		bar.setBounds(50,240,500,50);
+		bar.setStringPainted(true);
+		panel.add(bar);
+		
 		panel.setBackground(TAX);
-		panel.setLayout(null);
-
+		panel.setLayout(null);;
+		
 		frame = new JFrame();
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.add(panel);
 		frame.setSize(600, 400);
 		frame.setLocationRelativeTo(null);
 		frame.setBackground(DARK_GREY);
-
+		
+		
 		WelcomeLabel = new JLabel("Welcome to Fast Tax!");
 		WelcomeLabel.setBounds(10, 10, 600, 25);
 		panel.add(WelcomeLabel);
 		WelcomeLabel.setHorizontalAlignment(JLabel.CENTER);
 		// label.setVerticalAlignment(JLabel.CENTER); For HOrrixzontal
-
+		
+		
+		BufferedImage img = null;
+		try {
+		    img = ImageIO.read(new File("FastTax.png"));
+		} catch (IOException e) {
+		    e.printStackTrace();
+		}
+		Image dimg = img.getScaledInstance(500, 200, 100);
+		Image eimg = img.getScaledInstance(100,40,100);
+		
+		ImageIcon image1 = new ImageIcon(dimg);
+		ImageIcon image2 = new ImageIcon(eimg);
+		
+		label1 = new JLabel(image1);
+		label1.setBounds(50,30,500,200);
+		panel.add(label1);
+		
+		label2 = new JLabel(image2);
+		label2.setBounds(490,10,100,40);
+		panel.add(label2);
+		
 		Divider1Label = new JLabel("____________________");
 		Divider1Label.setBounds(10, 20, 600, 25);
 		panel.add(Divider1Label);
@@ -198,7 +293,12 @@ public class TaxFinal implements ActionListener {
 		frame.setTitle("Fast Tax, The Fastest Tax Thing!");
 
 		String Income = IncomeText.getText();
+		
+		if (panel.isVisible()) {
+			fill();
+		}
 	}
+
 
 	public static void DataCollection() {
 		YrEarnings = IncomeText.getText();
@@ -296,7 +396,23 @@ public class TaxFinal implements ActionListener {
 		frame.setSize(600, 400);
 		frame.setLocationRelativeTo(null);
 		frame.setBackground(DARK_GREY);
-
+		
+		
+		BufferedImage img = null;
+		try {
+		    img = ImageIO.read(new File("FastTax.png"));
+		} catch (IOException e) {
+		    e.printStackTrace();
+		}
+		
+		Image eimg = img.getScaledInstance(100,40,100);
+		
+		ImageIcon image2 = new ImageIcon(eimg);
+		
+		label2 = new JLabel(image2);
+		label2.setBounds(490,10,100,40);
+		panel.add(label2);
+		
 		RevenueCanadaLabel = new JLabel("Revenue Canada");
 		RevenueCanadaLabel.setBounds(10, 10, 600, 25);
 		panel.add(RevenueCanadaLabel);
@@ -355,18 +471,20 @@ public class TaxFinal implements ActionListener {
 		EarnaftTax.setBounds(60, 305, 600, 25);
 		panel.add(EarnaftTax);
 		// End of neccessary calculations.
-
+		
 		frame.setVisible(true);
 		frame.setTitle("Fast Tax, The Fastest Tax Thing!");
 	}
-
+	
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if (e.getActionCommand() == Actions.CALCULATE.name()) {
 			frame.setVisible(false);
 			DataCollection();
-			calculate();
 			System.out.println("Tax Calculated");
+			calculate();
+			
+			
 
 		} else if (e.getActionCommand() == Actions.LOAD.name()) {
 			// loadData();
