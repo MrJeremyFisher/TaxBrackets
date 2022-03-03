@@ -392,11 +392,12 @@ public class TaxFinal implements ActionListener
 			else if (income <= T2)
 			{ // Bracket 2 between 45142 and 90287
 				tax = RATE1 * T1 + RATE2 * (income - T1);
-				BR1 = true;
+				BR1= true;
 				BR2 = true;
 			}
 			else if (income <= T3)
 			{ // Bracket 3 between 90287 and 150000
+				//(income-T1)
 				tax = RATE1 * T1 + RATE2 * (income - T1) + RATE3 * (income - T2);
 				BR1 = true;
 				BR2 = true;
@@ -413,8 +414,7 @@ public class TaxFinal implements ActionListener
 			}
 			else
 			{ // Bracket 5 above 200000
-				tax = RATE1 * T1 + RATE2 * (income - T1) + RATE3 * (income - T2) + RATE4 * (income - T3)
-						+ RATE5 * (income - T4);
+				tax = RATE1 * T1 + RATE2 * (income - T1) + RATE3 * (income - T2) + RATE4 * (income - T3) + RATE5 * (income - T4);
 				BR1 = true;
 				BR2 = true;
 				BR3 = true;
@@ -455,7 +455,7 @@ public class TaxFinal implements ActionListener
 			}
 			else
 			{ // Bracket 5 above 200000
-				ftax = fRATE1 * fT1 + fRATE2 * (income - fT1) + fRATE3 * (income - fT2) + fRATE4 * (income - fT3) + RATE5 * (income - fT4);
+				ftax = fRATE1 * fT1 + fRATE2 * (income - fT1) + fRATE3 * (income - fT2) + fRATE4 * (income - fT3) + fRATE5 * (income - fT4);
 				fBR1 = true;
 				fBR2 = true;
 				fBR3 = true;
